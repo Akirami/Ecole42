@@ -44,8 +44,10 @@ def print_recipe():
 
 
 def add_recipe():
+    s = []
     s1 = input("Enter recipe name: >> ")
     s2 = input("Enter ingredients list: >> ")
+    s = s2.split()
     s3 = input("Enter recipe type: >> ")
     s4 = input("Enter prep time: >> ")
     try:
@@ -56,7 +58,7 @@ def add_recipe():
         handle_input()
 
     cookbook.update({s1: {
-        'ingredients': s2,
+        'ingredients': s,
         "type": s3,
         "prep_time": s4,
         }
