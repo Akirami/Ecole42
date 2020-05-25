@@ -109,7 +109,7 @@ def handle_input():
 
 
 def print_error():
-    print("\nOption does not exist, please type the corresponding number.")
+    print("\nOption does not exists, please type the corresponding number.")
     print("To exit, enter 5")
     handle_input()
 
