@@ -8,8 +8,13 @@ def log(function):
         result = function(*args, **kw)
         te = time.time()
         file = open("machine.log", "a")
-        z = '(Cmaxtime)Running: {name:20} [ exec-time = {time:.3f} \
- ms ]'.format(name=function.__name__, time=te - ts)
+        if function.__name__ == "make_coffee" or\
+            function.__name__ == "add_water":
+            z = '(Cmaxtime)Running: {name:20} [ exec-time = {time:.8f} \
+s  ]'.format(name=function.__name__, time=(te - ts))
+        else:
+            z = '(Cmaxtime)Running: {name:20} [ exec-time = {time:.8f} \
+ms ]'.format(name=function.__name__, time=(te - ts) * 1000)
         file.write(z + "\n")
         file.close()
         return result
@@ -36,7 +41,7 @@ class CoffeeMachine():
     def make_coffee(self):
         if self.start_machine():
             for _ in range(20):
-                time.sleep(0.02)
+                time.sleep(0.1)
                 self.water_level -= 1
             print(self.boil_water())
             print("Coffee is ready!")
