@@ -48,33 +48,41 @@ class ScrapBooker:
             arr = np.delete(array, list(range(0, array.shape[1], n)), axis=1)
         else:
             print_error("Axis out of range")
-        print("AS", array.shape)
         return arr
 
     def juxtapose(self, array, n, axis=0):
-        wh = array.shape
         if n < 1:
             print_error("N is zero or below, invalid.")
         if not axis:
-            arr = np.zeros((wh[0] * n, wh[1], 4), 'uint8')
+            arr = np.tile(array, (n, 1))
         elif axis:
-            arr = np.zeros((wh[0], wh[1] * n, 4), 'uint8')
+            arr = np.tile(array, (n, 1, 1))
         else:
             print_error("Axis out of range")
+        return arr
 
     def mosaic(self, array, dimensions):
-        pass
+        w, h = dimensions
+        if w < 1 or h < 1:
+            print_error("Wrong dimensions")
+        arr = np.tile(array, (w, 1))
+        arr = np.tile(arr, (h, 1, 1))
+
+        return arr
 
 
 if __name__ == "__main__":
     imp = ImageProcessor()
-    arr = imp.load("./az.png")
+    arr1 = imp.load("./az.png")
     scrp = ScrapBooker()
 
-    arr2 = scrp.crop(arr, (150, 150), (80, 50))
-    arr3 = scrp.thin(arr, 4, 0)
-    arr4 = scrp.juxtapose(arr, 3, 0)
+    arr2 = scrp.crop(arr1, (150, 150), (80, 50))
+    arr3 = scrp.thin(arr1, 4, 0)
+    arr4 = scrp.juxtapose(arr1, 4, 1)
+    arr5 = scrp.mosaic(arr1, (4, 3))
 
-    imp.display(arr)
+    imp.display(arr1)
     imp.display(arr2)
     imp.display(arr3)
+    imp.display(arr4)
+    imp.display(arr5)
