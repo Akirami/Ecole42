@@ -22,7 +22,7 @@
 # endif
 # define INF 2147483647
 # ifndef SAMPLING
-#  define SAMPLING 1.0
+#  define SAMPLING 2.0
 # endif
 # define TR_REF 0.15
 # ifndef M_PI
