@@ -24,4 +24,3 @@ if __name__ == "__main__":
 	Y = np.array([2, 14, -13, 5, 12, 4, -19])
 
 	print(cost_(X, Y))
-	print(cost_(X, X))
