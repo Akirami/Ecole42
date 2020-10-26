@@ -1,4 +1,4 @@
-Project done during my year of school at 42 Lyon - France.
+Projects carried out during my studies at school 42 Lyon - France.
 
 ### Get Next Line
 This project deals with memory allocation and when to free and allocate memory to prevent leaks.
@@ -7,8 +7,9 @@ This project deals with memory allocation and when to free and allocate memory t
 Rebuilding the printf library with basic functionality
 
 ### Minirt
-Render an image by calculating the color of each pixel from raw data (shapes, cameras, effects, ...) and mathematical formulas.
+Render an image by calculating the color of each pixel from raw data (shapes, cameras, effects, textures, filters, ...) and mathematical formulas.
 Use multithreading and minilibx
+![MiniRT Example](./minirt-ex1.png?raw=true "Exampel")
 
 ### Bootcamp
 Introduction to machine learning in Python using Numpy, MatPlotLib and Pandas
