@@ -9,7 +9,8 @@ Rebuilding the printf library with basic functionality
 ### Minirt
 Render an image by calculating the color of each pixel from raw data (shapes, cameras, effects, textures, filters, ...) and mathematical formulas.
 Use multithreading and minilibx
-![MiniRT Example](./minirt-ex1.png?raw=true "Exampel")
+![MiniRT Example](./minirt-ex2.bmp?raw=true "Example1")
+![MiniRT Example](./minirt-ex1.png?raw=true "Example2")
 
 ### Bootcamp
 Introduction to machine learning in Python using Numpy, MatPlotLib and Pandas
